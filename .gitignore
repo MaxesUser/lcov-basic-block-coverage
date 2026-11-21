@@ -1,0 +1,18 @@
+# Generated binaries, profiles, coverage and downloaded source trees
+build/
+third_party/
+bin/genhtml
+
+# Local test artifacts and Python caches
+test-results/
+__pycache__/
+*.pyc
+*.pyo
+*.o
+*.log
+.venv/
+
+# Editors / host OS
+.DS_Store
+.idea/
+.vscode/
