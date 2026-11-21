@@ -1,0 +1,3 @@
+# Coverage HTML is generated from the tested sources, not handwritten code.
+docs/reports/** linguist-generated=true
+docs/screenshots/*.png linguist-generated=true

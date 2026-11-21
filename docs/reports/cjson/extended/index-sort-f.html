@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info</title>
+  <link rel="stylesheet" type="text/css" href="gcov.css">
+</head>
+
+<body>
+<!-- BEGIN BB-COVERAGE -->
+<style>
+.bb-summary {font: 13px Arial,sans-serif; color: #222; margin: 12px 16px; padding: 11px 14px; border: 1px solid #aaa; background: #f7f7f7; max-width: 900px; box-sizing: border-box}
+.bb-summary * {box-sizing: border-box}
+
+.bb-summary.bb-embedded {background:transparent;border:0;max-width:none;margin:0 16px;padding:0}
+.bb-summary.bb-embedded.bb-no-tools {display:none}
+.bb-inline-bar {display:inline-block;width:38px;height:7px;margin-left:6px;background:#eee;border:1px solid #aaa;vertical-align:middle;overflow:hidden}
+.bb-inline-bar>span {display:block;height:100%;background:#245eb5}
+.bb-unplaced-details {margin-top:10px;border:1px solid #c7cdd4;padding:7px 9px;background:#fff;max-width:980px}
+.bb-unplaced-details>summary {cursor:pointer;font-weight:600}
+.bb-unplaced-details p {font-size:12px;line-height:1.4;color:#555}
+.bb-unplaced-scroll {max-height:310px;overflow:auto}
+.bb-unplaced-table {border-collapse:collapse;font:12px monospace;width:100%}
+.bb-unplaced-table td,.bb-unplaced-table th {text-align:left;border-bottom:1px solid #ddd;padding:4px 8px;max-width:290px;overflow-wrap:anywhere}
+.bb-unplaced-table .bb-hit {color:#23652c;background:#e5f4e7}
+.bb-unplaced-table .bb-miss {color:#942c27;background:#fae6e5}
+.bb-unplaced-details[data-filter="covered"] tr[data-bb-unplaced-hit="0"],
+.bb-unplaced-details[data-filter="uncovered"] tr[data-bb-unplaced-hit="1"] {display:none}
+.bb-unplaced-details button[aria-pressed="true"] {background:#ddd;font-weight:600}
+
+.bb-summary-heading {display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px}
+.bb-summary-label {font-weight: bold}
+.bb-summary-value {font-weight: bold}
+.bb-summary-count {color: #444}
+.bb-progress {height: 11px; background: #dedede; margin-top: 8px; border: 1px solid #ccc}
+.bb-progress-fill {height: 100%; width: 23.49%; background: #d9534f}
+.bb-toolbar {display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 11px}
+.bb-toolbar-label {margin-right: 5px}
+.bb-filter {font: inherit; padding: 4px 9px; border: 1px solid #aaa; background: #fff; color: #222; cursor: pointer}
+.bb-filter.bb-active {border-color: #555; background: #ddd; font-weight: bold}
+.bb-next {margin-left: 8px; color: #154e88}
+.bb-hint,.bb-unplaced {margin-top: 9px; font-size: 12px; color: #555}
+.bb-unplaced {color: #8a351b}
+.bb-gutter {display: inline-block; width: 18ch; max-width: 18ch; vertical-align: baseline; white-space: nowrap; overflow: hidden; color: #333; font: 11px/1.35 monospace}
+.bb-gutter:hover,.bb-gutter:focus-within {overflow: visible; position: relative; z-index: 2; background: #fff; width: auto; max-width: none; margin-right: 0}
+.bb-marker {display: inline-block; padding: 0 3px; margin: 0 1px; border: 1px solid; border-radius: 2px; font: 10px/1.4 monospace; white-space: nowrap; vertical-align: baseline; cursor: help}
+.bb-hit {background: #e5f4e7; border-color: #76b982; color: #23652c}
+.bb-miss {background: #fae6e5; border-color: #d78b85; color: #942c27}
+.bb-show-missed .bb-marker.bb-hit {display: none}
+.bb-gutter:hover .bb-marker {box-shadow: 0 1px 3px #aaa}
+.bb-marker[role="button"] {cursor:pointer}
+.bb-marker:focus-visible {outline:2px solid #174c98}
+.bb-dialog {font:13px Arial,sans-serif; border:1px solid #777; padding:15px 20px; min-width:340px; max-width:90vw; background:#fff; color:#222}
+.bb-dialog::backdrop {background:rgba(0,0,0,.25)}
+.bb-dialog h3 {margin:0 0 12px}
+.bb-dialog dl {display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 12px}
+.bb-dialog dd {overflow-wrap:anywhere;margin:0}
+.bb-dialog dt {font-weight:bold}
+</style>
+<div class="bb-summary bb-embedded bb-no-tools" data-bb-covered="311" data-bb-total="1324">
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.bb-filter');
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var missed = button.getAttribute('data-bb-filter') === 'missed';
+            document.body.classList.toggle('bb-show-missed', missed);
+            buttons.forEach(function (item) {
+                var active = item === button;
+                item.classList.toggle('bb-active', active);
+                item.setAttribute('aria-pressed', String(active));
+            });
+        });
+    });
+    
+    document.querySelectorAll('[data-bb-unplaced-filter]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var panel = button.closest('.bb-unplaced-details');
+            if (!panel) return;
+            panel.dataset.filter = button.getAttribute('data-bb-unplaced-filter');
+            panel.querySelectorAll('[data-bb-unplaced-filter]').forEach(function(item) {
+                item.setAttribute('aria-pressed', String(item === button));
+            });
+        });
+    });
+
+    var dialog = document.getElementById('bb-dialog');
+    if (dialog) {
+        function openBlock(marker) {
+            var fields = {label: marker.textContent, function: marker.dataset.bbFunction || 'Unknown',
+                pc: marker.dataset.bbPc || 'Unknown', line: marker.dataset.bbLine || 'Unknown',
+                status: marker.dataset.bbHit === '1' ? 'Covered' : 'Uncovered'};
+            Object.keys(fields).forEach(function (key) {
+                document.getElementById('bb-detail-' + key).textContent = fields[key];
+            });
+            var link = document.getElementById('bb-detail-cfg');
+            if (marker.dataset.bbCfg) {
+                link.href = marker.dataset.bbCfg;
+                link.hidden = false;
+            } else {
+                link.removeAttribute('href');
+                link.hidden = true;
+            }
+            dialog.showModal();
+        }
+        document.querySelectorAll('.bb-marker[role="button"]').forEach(function (marker) {
+            marker.addEventListener('click', function () {openBlock(marker);});
+            marker.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {e.preventDefault(); openBlock(marker);}
+            });
+        });
+    }
+});
+</script>
+<!-- END BB-COVERAGE -->
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue">top level</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">17.3&nbsp;%</td>
+            <td class="headerCovTableEntry">2327</td>
+            <td class="headerCovTableEntry">402</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-21 10:40:27</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">18.4&nbsp;%</td>
+            <td class="headerCovTableEntry">114</td>
+            <td class="headerCovTableEntry">21</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">17.9&nbsp;%</td>
+            <td class="headerCovTableEntry">1064</td>
+            <td class="headerCovTableEntry">190</td>
+          </tr>
+<!-- BEGIN BB-HEADER --><tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="headerItem">Basic Blocks:</td>
+            <td class="headerCovTableEntryLo">23.5 % <span class="bb-inline-bar" aria-hidden="true"><span style="width:23.49%;background:#d9534f"></span></span></td>
+            <td class="headerCovTableEntry">1324</td>
+            <td class="headerCovTableEntry">311</td>
+          </tr><!-- END BB-HEADER -->
+                  <tr><td><img src="glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <center>
+          <table width="80%" cellpadding=1 cellspacing=1 border=0>
+
+            <tr>
+              <td width="40%"><br></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            <td width="6%"></td>
+            </tr>
+
+            <tr>
+              <td class="tableHead" rowspan=2>Directory <span  title="Click to sort table by file name" class="tableHeadSort"><a href="index.html"><img src="updown.png" width=10 height=14 alt="Sort by file name" title="Click to sort table by file name" border=0></a></span></td>
+        <td class="tableHead" colspan=4>Line Coverage <span  title="Click to sort table by line coverage" class="tableHeadSort"><a href="index-sort-l.html"><img src="updown.png" width=10 height=14 alt="Sort by line coverage" title="Click to sort table by line coverage" border=0></a></span></td>
+        <td class="tableHead" colspan=3>Branch Coverage <span  title="Click to sort table by branch coverage" class="tableHeadSort"><a href="index-sort-b.html"><img src="updown.png" width=10 height=14 alt="Sort by branch coverage" title="Click to sort table by branch coverage" border=0></a></span></td>
+        <td class="tableHead" colspan=3>Function Coverage <span  title="Click to sort table by function coverage" class="tableHeadSort"><img src="glass.png" width=10 height=14 alt="Sort by function coverage" title="Click to sort table by function coverage" border=0></span></td>
+            </tr>
+            <tr>
+                    <td class="tableHead" colspan=2> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+                    <td class="tableHead"> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+                    <td class="tableHead"> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+            </tr>
+            <tr>
+              <td class="coverDirectory"><a href="third_party/cJSON/index.html" title="Click to go to directory /home/mafioznik/share/bb-genhtml-bonus1/third_party/cJSON">third_party/cJSON/</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="ruby.png" width=17 height=10 alt="16.5%"><img src="snow.png" width=83 height=10 alt="16.5%"></td></tr></table>
+              </td>
+              <td class="coverPerLo">16.5&nbsp;%</td>
+              <td class="coverNumDflt">2303</td>
+              <td class="coverNumDflt">380</td>
+              <td class="coverPerLo">17.1&nbsp;%</td>
+              <td class="coverNumDflt">1052</td>
+              <td class="coverNumDflt">180</td>
+              <td class="coverPerLo">17.7&nbsp;%</td>
+              <td class="coverNumDflt">113</td>
+              <td class="coverNumDflt">20</td>
+            </tr>
+            <tr>
+              <td class="coverDirectory"><a href="demos/index.html" title="Click to go to directory /home/mafioznik/share/bb-genhtml-bonus1/demos">demos/</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="emerald.png" width=92 height=10 alt="91.7%"><img src="snow.png" width=8 height=10 alt="91.7%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">91.7&nbsp;%</td>
+              <td class="coverNumDflt">24</td>
+              <td class="coverNumDflt">22</td>
+              <td class="coverPerMed">83.3&nbsp;%</td>
+              <td class="coverNumDflt">12</td>
+              <td class="coverNumDflt">10</td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt">1</td>
+            </tr>
+          </table>
+          </center>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

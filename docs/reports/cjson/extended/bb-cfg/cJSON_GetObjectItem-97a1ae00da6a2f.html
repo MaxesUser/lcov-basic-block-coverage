@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>CFG — cJSON.c: cJSON_GetObjectItem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font:14px/1.55 Arial,sans-serif;color:#27313d;background:#fff;margin:0}
+header{border-bottom:1px solid #dee3e8;padding:18px 24px;background:#f9fafc}
+main{padding:18px 24px;max-width:1450px;margin:auto}
+a{color:#135b93}h1{font-size:20px;margin:8px 0}h2{font-size:16px;margin:20px 0 8px}
+.meta{color:#586675}.toolbar{display:flex;gap:8px;align-items:center;margin:14px 0}
+button{font:inherit;padding:6px 13px;background:#fff;border:1px solid #aebbc7;border-radius:5px;cursor:pointer}
+button[aria-pressed="true"]{background:#1e4f78;color:white;border-color:#1e4f78}
+.graph{overflow:auto;border:1px solid #d8dfe6;border-radius:6px;background:#fcfcfd;padding:20px;min-height:220px}
+.graph svg{display:block;height:auto;max-width:none;margin:auto}
+.graph[hidden]{display:none}
+.note{max-width:900px;color:#53616e}.legend{display:flex;gap:18px;flex-wrap:wrap}
+.legend b{font-weight:600}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+.legend-swatch{height:12px;width:12px;border:1px solid;border-radius:3px;display:inline-block}
+.legend-swatch.covered{background:#e3f3e7;border-color:#32804b}
+.legend-swatch.uncovered{background:#fee9e7;border-color:#b2423d}
+.legend-swatch.unverified{background:#edf0f3;border-color:#8793a0}
+.graph-explainer{margin:8px 0;color:#53616e;font-size:13px}
+.node-detail{border:1px solid #d8dfe6;margin:7px 0;border-radius:5px;background:#fff}
+.node-detail[open]{border-color:#8aa4ba}
+.node-detail summary{cursor:pointer;padding:10px 13px;font-weight:600}
+.detail-body{padding:0 15px 12px;overflow-wrap:anywhere}
+.detail-body pre{padding:12px;overflow:auto;background:#f1f4f6;border-radius:4px;font:12px/1.5 monospace}
+.state{font-size:12px;font-weight:400;padding:3px 6px;border-radius:3px}
+.covered{background:#e3f3e7;color:#21633a}.uncovered{background:#fee9e7;color:#94312b}
+.unverified{background:#edf0f3;color:#566574}code{font-size:12px}
+</style></head><body>
+<header><a href="../third_party/cJSON/cJSON.c.gcov.html">Back to source code</a><h1>Control-flow graph — cJSON.c: cJSON_GetObjectItem</h1>
+<div class="meta">LLVM instrumented CFG · 1 blocks · 0 possible block-to-block transitions</div></header>
+<main><div class="legend">
+<span class="legend-item"><i class="legend-swatch covered"></i><b>Covered:</b> 0</span>
+<span class="legend-item"><i class="legend-swatch uncovered"></i><b>Uncovered:</b> 1</span>
+<span class="legend-item"><i class="legend-swatch unverified"></i><b>Unverified:</b> 0</span></div>
+<p class="graph-explainer"><strong>Gray does not mean missed:</strong> mapping to runtime PC was not confirmed. Arrows are <strong>possible</strong> transitions, not measured edge hits.</p>
+<div class="toolbar" role="group" aria-label="Graph detail">
+<button type="button" data-mode="simple" aria-pressed="true">Simplified (1 groups)</button>
+<button type="button" data-mode="full" aria-pressed="false">Full (1 blocks)</button></div>
+<div class="graph" data-graph="simple"><svg width="378pt" height="282pt"
+ viewBox="0.00 0.00 377.83 282.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 260.45)">
+<title>CFG</title>
+<!-- start&#45;&gt;g0 -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;g0</title>
+<path fill="none" stroke="#69798a" stroke-width="1.8" d="M72,-196.24C72,-183.93 72,-167.95 72,-153.84"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.8" points="74.45,-153.66 72,-146.66 69.55,-153.66 74.45,-153.66"/>
+</g>
+<!-- g0&#45;&gt;finish -->
+<g id="edge2" class="edge">
+<title>g0&#45;&gt;finish</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M72,-92.39C72,-79.15 72,-63.06 72,-49.63"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="74.45,-49.47 72,-42.47 69.55,-49.47 74.45,-49.47"/>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="72" cy="-217.64" rx="45.01" ry="21.43"/>
+<text text-anchor="middle" x="72" y="-214.84" font-family="DejaVu Sans" font-size="11.00">ENTRY</text>
+</g>
+<!-- finish -->
+<g id="node2" class="node">
+<title>finish</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="72" cy="-21.21" rx="37.45" ry="21.43"/>
+<text text-anchor="middle" x="72" y="-18.41" font-family="DejaVu Sans" font-size="11.00">EXIT</text>
+</g>
+<!-- abort -->
+<!-- g0 -->
+<g id="node4" class="node">
+<title>g0</title>
+<g id="a_node4"><a xlink:href="#node-BB340" xlink:title="uncovered: BB340" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M132,-146.43C132,-146.43 12,-146.43 12,-146.43 6,-146.43 0,-140.43 0,-134.43 0,-134.43 0,-104.43 0,-104.43 0,-98.43 6,-92.43 12,-92.43 12,-92.43 132,-92.43 132,-92.43 138,-92.43 144,-98.43 144,-104.43 144,-104.43 144,-134.43 144,-134.43 144,-140.43 138,-146.43 132,-146.43"/>
+<text text-anchor="middle" x="72" y="-128.63" font-family="DejaVu Sans" font-size="11.00">BB340 &#160;| &#160;line 1969</text>
+<text text-anchor="middle" x="72" y="-116.63" font-family="DejaVu Sans" font-size="11.00">{</text>
+<text text-anchor="middle" x="72" y="-104.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<div class="graph" data-graph="full" hidden><svg width="378pt" height="282pt"
+ viewBox="0.00 0.00 377.83 282.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 260.45)">
+<title>CFG</title>
+<!-- start&#45;&gt;g0 -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;g0</title>
+<path fill="none" stroke="#69798a" stroke-width="1.8" d="M72,-196.24C72,-183.93 72,-167.95 72,-153.84"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.8" points="74.45,-153.66 72,-146.66 69.55,-153.66 74.45,-153.66"/>
+</g>
+<!-- g0&#45;&gt;finish -->
+<g id="edge2" class="edge">
+<title>g0&#45;&gt;finish</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M72,-92.39C72,-79.15 72,-63.06 72,-49.63"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="74.45,-49.47 72,-42.47 69.55,-49.47 74.45,-49.47"/>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="72" cy="-217.64" rx="45.01" ry="21.43"/>
+<text text-anchor="middle" x="72" y="-214.84" font-family="DejaVu Sans" font-size="11.00">ENTRY</text>
+</g>
+<!-- finish -->
+<g id="node2" class="node">
+<title>finish</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="72" cy="-21.21" rx="37.45" ry="21.43"/>
+<text text-anchor="middle" x="72" y="-18.41" font-family="DejaVu Sans" font-size="11.00">EXIT</text>
+</g>
+<!-- abort -->
+<!-- g0 -->
+<g id="node4" class="node">
+<title>g0</title>
+<g id="a_node4"><a xlink:href="#node-BB340" xlink:title="uncovered: BB340" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M132,-146.43C132,-146.43 12,-146.43 12,-146.43 6,-146.43 0,-140.43 0,-134.43 0,-134.43 0,-104.43 0,-104.43 0,-98.43 6,-92.43 12,-92.43 12,-92.43 132,-92.43 132,-92.43 138,-92.43 144,-98.43 144,-104.43 144,-104.43 144,-134.43 144,-134.43 144,-140.43 138,-146.43 132,-146.43"/>
+<text text-anchor="middle" x="72" y="-128.63" font-family="DejaVu Sans" font-size="11.00">BB340 &#160;| &#160;line 1969</text>
+<text text-anchor="middle" x="72" y="-116.63" font-family="DejaVu Sans" font-size="11.00">{</text>
+<text text-anchor="middle" x="72" y="-104.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<p class="note">ENTRY is the start of the function. EXIT marks normal return; STOP / EXCEPTION marks exceptional or unreachable termination. True/false/case labels come from LLVM IR terminators. Dashed arrows are loop-back candidates. <strong>Every arrow is a possible transfer, not proof that the edge executed.</strong> A colored node has a validated runtime PC match; gray means no reliable match. Simplified mode folds linear chains but retains every branch alternative.</p>
+<h2>Blocks and LLVM details</h2><details class="node-detail" id="node-BB340">
+<summary>BB340 <span class="state uncovered">uncovered</span> · line 1969</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>{</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%entry</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x105a0</code>
+ · <strong>slot:</strong> 287</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %6, label %7, label %8, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-1969">Open source line 1969</a></p></div></details>
+</main><script>
+(function() {
+  var buttons = document.querySelectorAll('button[data-mode]');
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var mode = button.getAttribute('data-mode');
+      document.querySelectorAll('.graph[data-graph]').forEach(function(graph) {
+        graph.hidden = graph.getAttribute('data-graph') !== mode;
+      });
+      buttons.forEach(function(item) {item.setAttribute('aria-pressed', String(item === button));});
+    });
+  });
+  function focusDetail() {
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id || !id.startsWith('node-')) return;
+    var detail = document.getElementById(id);
+    if (detail) {detail.open = true; detail.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange', focusDetail);
+  focusDetail();
+})();
+</script></body></html>

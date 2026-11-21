@@ -14,12 +14,33 @@ bash scripts/demo.sh
 
 ## Автоматические проверки
 
-- Python: **33 теста, OK**
+- В проверенном прогоне v8 на Debian: **33 Python-теста, OK**
+- После добавления универсального CLI и документации: **41 Python-тест, OK** в локальной среде; полный CLI-прогон с `genhtml` на Debian теперь подтвержден ниже
 - Runtime: **9/10 (90%)** блоков за три запуска; 0 `unmapped` и 0 `outside LCOV`
 - `Instrumentation OK` на обеих библиотеках; все исходные PC учтены
 - `Compatibility OK`: 16 HTML-страниц cJSON и 16 страниц inih с идентичными данными покрытия
 - `Extended report OK`: счетчики, метки и встроенная BB-метрика
 - `Source-line audit`: количество видимых меток и блоков без номера строки
+
+
+## Независимый сценарий `inih-walkthrough`
+
+Отдельно на Debian 13 ARM64 выполнен универсальный сценарий с `scripts/coverage_project.py` (без `demo.sh`):
+
+```bash
+python3 scripts/coverage_project.py build inih-walkthrough \
+    --source third_party/inih/ini.c \
+    --source demos/inih_driver.c \
+    --include third_party/inih
+python3 scripts/coverage_project.py run inih-walkthrough -- 0
+python3 scripts/coverage_project.py run inih-walkthrough -- 1
+python3 scripts/coverage_project.py run inih-walkthrough -- 2
+python3 scripts/coverage_project.py report inih-walkthrough --strict-mapping
+```
+
+Результат: 3 запуска, **87/128 BB (68,0%)**, 0 `unmapped`, 0 `outside LCOV`; `Instrumentation OK`, `Compatibility OK` (16 страниц), `Extended report OK` (51 метка), аудит 77 BB без номера DWARF-строки (47 выполнено). `llvm-cov` также показал 149/188 Lines, 10/12 Functions и 50/94 Branches. [Порядок действий и снимки](WALKTHROUGH.md).
+
+Снимки хранятся в `docs/screenshots/`. Часть кадров представляет **свой пример `inih-walkthrough`**, а не исходный `demo.sh`, хотя итоговые числа BB совпадают. Совместимость проверена отдельно для каждого сценария.
 
 ## Покрытие сторонних проектов
 
@@ -69,3 +90,22 @@ build/inih/html-extended/index.html
 ```
 
 Директория `build/` генерируется повторно и исключена из Git.
+
+## Публикация результатов без сборки
+
+После успешного `scripts/demo.sh` выполнить:
+
+```bash
+python3 scripts/publish_reports.py
+```
+
+Скрипт копирует в `docs/reports/{cjson,inih}/` по три варианта
+HTML (`original`, `compatible`, `extended`) и помещает в `docs/index.html`
+навигацию по всем шести наборам отчетов. Готовые HTML-файлы являются
+снимком проверенного запуска, а не альтернативной системой сбора данных.
+Для воспроизведения конкретных чисел необходимы те же версии инструментов,
+исходных проектов и входных сценариев.
+
+В публикуемый каталог также включаются тексты лицензий сторонних библиотек.
+Ссылки на отчеты после включения GitHub Pages доступны без клонирования
+репозитория и без установки LLVM/LCOV.

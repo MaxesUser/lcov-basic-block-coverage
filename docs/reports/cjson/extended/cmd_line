@@ -1,0 +1,1 @@
+genhtml build/cjson/coverage.info --branch-coverage --rc check_data_consistency=0 --output-directory build/cjson/html-extended

@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>CFG — cJSON.c: cJSON_DetachItemViaPointer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font:14px/1.55 Arial,sans-serif;color:#27313d;background:#fff;margin:0}
+header{border-bottom:1px solid #dee3e8;padding:18px 24px;background:#f9fafc}
+main{padding:18px 24px;max-width:1450px;margin:auto}
+a{color:#135b93}h1{font-size:20px;margin:8px 0}h2{font-size:16px;margin:20px 0 8px}
+.meta{color:#586675}.toolbar{display:flex;gap:8px;align-items:center;margin:14px 0}
+button{font:inherit;padding:6px 13px;background:#fff;border:1px solid #aebbc7;border-radius:5px;cursor:pointer}
+button[aria-pressed="true"]{background:#1e4f78;color:white;border-color:#1e4f78}
+.graph{overflow:auto;border:1px solid #d8dfe6;border-radius:6px;background:#fcfcfd;padding:20px;min-height:220px}
+.graph svg{display:block;height:auto;max-width:none;margin:auto}
+.graph[hidden]{display:none}
+.note{max-width:900px;color:#53616e}.legend{display:flex;gap:18px;flex-wrap:wrap}
+.legend b{font-weight:600}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+.legend-swatch{height:12px;width:12px;border:1px solid;border-radius:3px;display:inline-block}
+.legend-swatch.covered{background:#e3f3e7;border-color:#32804b}
+.legend-swatch.uncovered{background:#fee9e7;border-color:#b2423d}
+.legend-swatch.unverified{background:#edf0f3;border-color:#8793a0}
+.graph-explainer{margin:8px 0;color:#53616e;font-size:13px}
+.node-detail{border:1px solid #d8dfe6;margin:7px 0;border-radius:5px;background:#fff}
+.node-detail[open]{border-color:#8aa4ba}
+.node-detail summary{cursor:pointer;padding:10px 13px;font-weight:600}
+.detail-body{padding:0 15px 12px;overflow-wrap:anywhere}
+.detail-body pre{padding:12px;overflow:auto;background:#f1f4f6;border-radius:4px;font:12px/1.5 monospace}
+.state{font-size:12px;font-weight:400;padding:3px 6px;border-radius:3px}
+.covered{background:#e3f3e7;color:#21633a}.uncovered{background:#fee9e7;color:#94312b}
+.unverified{background:#edf0f3;color:#566574}code{font-size:12px}
+</style></head><body>
+<header><a href="../third_party/cJSON/cJSON.c.gcov.html">Back to source code</a><h1>Control-flow graph — cJSON.c: cJSON_DetachItemViaPointer</h1>
+<div class="meta">LLVM instrumented CFG · 18 blocks · 25 possible block-to-block transitions</div></header>
+<main><div class="legend">
+<span class="legend-item"><i class="legend-swatch covered"></i><b>Covered:</b> 0</span>
+<span class="legend-item"><i class="legend-swatch uncovered"></i><b>Uncovered:</b> 7</span>
+<span class="legend-item"><i class="legend-swatch unverified"></i><b>Unverified:</b> 11</span></div>
+<p class="graph-explainer"><strong>Gray does not mean missed:</strong> mapping to runtime PC was not confirmed. Arrows are <strong>possible</strong> transitions, not measured edge hits.</p>
+<div class="toolbar" role="group" aria-label="Graph detail">
+<button type="button" data-mode="simple" aria-pressed="true">Simplified (17 groups)</button>
+<button type="button" data-mode="full" aria-pressed="false">Full (18 blocks)</button></div>
+<div class="graph" data-graph="simple"><svg width="845pt" height="1772pt"
+ viewBox="0.00 0.00 844.70 1772.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 1750.45)">
+<title>CFG</title>
+<!-- start&#45;&gt;g0 -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;g0</title>
+<path fill="none" stroke="#69798a" stroke-width="1.8" d="M208,-1686.02C208,-1673.49 208,-1657.2 208,-1642.86"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.8" points="210.45,-1642.57 208,-1635.57 205.55,-1642.57 210.45,-1642.57"/>
+</g>
+<!-- g0&#45;&gt;g1 -->
+<g id="edge2" class="edge">
+<title>g0&#45;&gt;g1</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M261.06,-1581.36C296.03,-1564.18 341.89,-1541.65 378.16,-1523.83"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="379.61,-1525.84 384.81,-1520.56 377.45,-1521.44 379.61,-1525.84"/>
+<text text-anchor="middle" x="341.5" y="-1548.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g0&#45;&gt;g5 -->
+<g id="edge3" class="edge">
+<title>g0&#45;&gt;g5</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M201.74,-1581.22C193.76,-1547.84 181,-1494.43 181,-1494.43 181,-1494.43 181,-1494.43 181,-1147.43 181,-1147.43 214.93,-1100.09 238.87,-1066.69"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="241.13,-1067.75 243.21,-1060.63 237.14,-1064.9 241.13,-1067.75"/>
+<text text-anchor="middle" x="191" y="-1318.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g1&#45;&gt;g2 -->
+<g id="edge4" class="edge">
+<title>g1&#45;&gt;g2</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M457.48,-1466.22C469.67,-1449.82 485.46,-1428.58 498.37,-1411.22"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="500.41,-1412.57 502.62,-1405.49 496.48,-1409.65 500.41,-1412.57"/>
+<text text-anchor="middle" x="494.5" y="-1433.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g1&#45;&gt;g5 -->
+<g id="edge5" class="edge">
+<title>g1&#45;&gt;g5</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M397.18,-1466.22C345.19,-1432.84 262,-1379.43 262,-1379.43 262,-1379.43 262,-1379.43 262,-1147.43 262,-1147.43 262,-1101.26 262,-1067.95"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="264.45,-1067.63 262,-1060.63 259.55,-1067.63 264.45,-1067.63"/>
+<text text-anchor="middle" x="272" y="-1260.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g2&#45;&gt;g3 -->
+<g id="edge6" class="edge">
+<title>g2&#45;&gt;g3</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M522,-1351.22C522,-1335.24 522,-1314.68 522,-1297.59"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="524.45,-1297.49 522,-1290.49 519.55,-1297.49 524.45,-1297.49"/>
+<text text-anchor="middle" x="532" y="-1318.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g2&#45;&gt;g6 -->
+<g id="edge7" class="edge">
+<title>g2&#45;&gt;g6</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M589.21,-1351.32C655.19,-1325.7 746,-1290.43 746,-1290.43 746,-1290.43 746,-1236.43 746,-1236.43 746,-1236.43 714.9,-1205.68 689.68,-1180.75"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="691.1,-1178.71 684.4,-1175.53 687.66,-1182.19 691.1,-1178.71"/>
+<text text-anchor="middle" x="758.5" y="-1260.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g3&#45;&gt;g4 -->
+<g id="edge8" class="edge">
+<title>g3&#45;&gt;g4</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M500.43,-1236.22C486.93,-1219.82 469.45,-1198.58 455.17,-1181.22"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="456.79,-1179.34 450.45,-1175.49 453.01,-1182.45 456.79,-1179.34"/>
+<text text-anchor="middle" x="488" y="-1203.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g3&#45;&gt;g6 -->
+<g id="edge9" class="edge">
+<title>g3&#45;&gt;g6</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M553.54,-1236.22C573.71,-1219.46 599.96,-1197.65 621.09,-1180.09"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="622.81,-1181.85 626.63,-1175.49 619.68,-1178.08 622.81,-1181.85"/>
+<text text-anchor="middle" x="606.5" y="-1203.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g4&#45;&gt;g5 -->
+<g id="edge10" class="edge">
+<title>g4&#45;&gt;g5</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M390.27,-1121.22C365.18,-1104.25 332.45,-1082.1 306.33,-1064.42"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="307.69,-1062.39 300.52,-1060.49 304.95,-1066.44 307.69,-1062.39"/>
+</g>
+<!-- g5&#45;&gt;g16 -->
+<g id="edge11" class="edge">
+<title>g5&#45;&gt;g16</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M262,-1006.17C262,-975.65 262,-929.43 262,-929.43 262,-929.43 262,-929.43 262,-224.43 262,-224.43 269.31,-184.81 274.86,-154.71"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="277.3,-155.01 276.16,-147.68 272.48,-154.12 277.3,-155.01"/>
+</g>
+<!-- g6&#45;&gt;g7 -->
+<g id="edge12" class="edge">
+<title>g6&#45;&gt;g7</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M663.33,-1121.22C666.59,-1105.24 670.77,-1084.68 674.25,-1067.59"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="676.7,-1067.84 675.69,-1060.49 671.9,-1066.86 676.7,-1067.84"/>
+<text text-anchor="middle" x="680" y="-1088.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g6&#45;&gt;g8 -->
+<g id="edge13" class="edge">
+<title>g6&#45;&gt;g8</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M620.5,-1121.32C583.68,-1095.7 533,-1060.43 533,-1060.43 533,-1060.43 533,-1006.43 533,-1006.43 533,-1006.43 536.9,-983.35 540.42,-962.46"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="542.85,-962.81 541.6,-955.5 538.02,-961.99 542.85,-962.81"/>
+<text text-anchor="middle" x="545.5" y="-1030.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g7&#45;&gt;g8 -->
+<g id="edge14" class="edge">
+<title>g7&#45;&gt;g8</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M646.58,-1006.17C628.18,-992.12 605.41,-974.75 586.19,-960.09"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="587.4,-957.93 580.35,-955.64 584.43,-961.83 587.4,-957.93"/>
+</g>
+<!-- g8&#45;&gt;g9 -->
+<g id="edge15" class="edge">
+<title>g8&#45;&gt;g9</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M558.06,-901.22C565.48,-885.1 575.04,-864.32 582.95,-847.13"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="585.3,-847.88 586,-840.49 580.85,-845.83 585.3,-847.88"/>
+<text text-anchor="middle" x="583" y="-868.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g8&#45;&gt;g10 -->
+<g id="edge16" class="edge">
+<title>g8&#45;&gt;g10</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M517.2,-901.32C488.92,-875.7 450,-840.43 450,-840.43 450,-840.43 450,-786.43 450,-786.43 450,-786.43 457.26,-763.15 463.79,-742.19"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="466.13,-742.91 465.87,-735.5 461.45,-741.45 466.13,-742.91"/>
+<text text-anchor="middle" x="462.5" y="-810.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g9&#45;&gt;g10 -->
+<g id="edge17" class="edge">
+<title>g9&#45;&gt;g10</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M566.39,-786.17C549.63,-772.25 528.93,-755.05 511.38,-740.47"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="512.5,-738.22 505.55,-735.64 509.37,-741.99 512.5,-738.22"/>
+</g>
+<!-- g10&#45;&gt;g11 -->
+<g id="edge18" class="edge">
+<title>g10&#45;&gt;g11</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M459.6,-681.32C445.46,-655.7 426,-620.43 426,-620.43 426,-620.43 412.66,-579.22 402.69,-548.44"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="404.98,-547.56 400.49,-541.65 400.32,-549.07 404.98,-547.56"/>
+<text text-anchor="middle" x="454" y="-648.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g10&#45;&gt;g12 -->
+<g id="edge19" class="edge">
+<title>g10&#45;&gt;g12</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M488.61,-681.22C497.68,-664.96 509.39,-643.95 519.02,-626.67"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="521.2,-627.8 522.47,-620.49 516.92,-625.41 521.2,-627.8"/>
+<text text-anchor="middle" x="519.5" y="-648.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g11&#45;&gt;g15 -->
+<g id="edge20" class="edge">
+<title>g11&#45;&gt;g15</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M391.54,-487.2C390.63,-434.78 388.58,-317.19 387.58,-259.55"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="390.03,-259.45 387.45,-252.49 385.13,-259.53 390.03,-259.45"/>
+</g>
+<!-- g12&#45;&gt;g13 -->
+<g id="edge21" class="edge">
+<title>g12&#45;&gt;g13</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M563.28,-566.32C590.56,-539.21 633.25,-496.79 662.36,-467.86"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="664.4,-469.29 667.64,-462.62 660.94,-465.82 664.4,-469.29"/>
+<text text-anchor="middle" x="648" y="-511.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g12&#45;&gt;g14 -->
+<g id="edge22" class="edge">
+<title>g12&#45;&gt;g14</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M537.71,-565.96C538.99,-518.06 541.7,-417.09 543.11,-364.64"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="545.56,-364.63 543.3,-357.57 540.66,-364.5 545.56,-364.63"/>
+<text text-anchor="middle" x="553.5" y="-432.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g13&#45;&gt;g14 -->
+<g id="edge23" class="edge">
+<title>g13&#45;&gt;g14</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M655.76,-408.17C635.05,-393.95 609.38,-376.32 587.86,-361.54"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="589.07,-359.4 581.91,-357.46 586.29,-363.44 589.07,-359.4"/>
+</g>
+<!-- g14&#45;&gt;g15 -->
+<g id="edge24" class="edge">
+<title>g14&#45;&gt;g15</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M503.98,-303.17C482.21,-288.89 455.2,-271.17 432.62,-256.35"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="433.88,-254.25 426.68,-252.46 431.19,-258.35 433.88,-254.25"/>
+</g>
+<!-- g15&#45;&gt;g16 -->
+<g id="edge25" class="edge">
+<title>g15&#45;&gt;g16</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M359.98,-198.17C345.77,-184.37 328.26,-167.35 313.34,-152.85"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="314.7,-150.76 307.97,-147.64 311.29,-154.27 314.7,-150.76"/>
+</g>
+<!-- g16&#45;&gt;finish -->
+<g id="edge26" class="edge">
+<title>g16&#45;&gt;finish</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M281,-93.38C281,-79.9 281,-63.45 281,-49.76"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="283.45,-49.48 281,-42.48 278.55,-49.48 283.45,-49.48"/>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="208" cy="-1707.64" rx="45.01" ry="21.43"/>
+<text text-anchor="middle" x="208" y="-1704.84" font-family="DejaVu Sans" font-size="11.00">ENTRY</text>
+</g>
+<!-- finish -->
+<g id="node2" class="node">
+<title>finish</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="281" cy="-21.21" rx="37.45" ry="21.43"/>
+<text text-anchor="middle" x="281" y="-18.41" font-family="DejaVu Sans" font-size="11.00">EXIT</text>
+</g>
+<!-- abort -->
+<!-- g0 -->
+<g id="node4" class="node">
+<title>g0</title>
+<g id="a_node4"><a xlink:href="#node-BB397" xlink:title="uncovered: BB397" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M404,-1635.43C404,-1635.43 12,-1635.43 12,-1635.43 6,-1635.43 0,-1629.43 0,-1623.43 0,-1623.43 0,-1593.43 0,-1593.43 0,-1587.43 6,-1581.43 12,-1581.43 12,-1581.43 404,-1581.43 404,-1581.43 410,-1581.43 416,-1587.43 416,-1593.43 416,-1593.43 416,-1623.43 416,-1623.43 416,-1629.43 410,-1635.43 404,-1635.43"/>
+<text text-anchor="middle" x="208" y="-1617.63" font-family="DejaVu Sans" font-size="11.00">BB397 &#160;| &#160;line 2244</text>
+<text text-anchor="middle" x="208" y="-1605.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="208" y="-1593.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g1 -->
+<g id="node5" class="node">
+<title>g1</title>
+<g id="a_node5"><a xlink:href="#node-ir-14" xlink:title="unverified: IR %14" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M634,-1520.43C634,-1520.43 242,-1520.43 242,-1520.43 236,-1520.43 230,-1514.43 230,-1508.43 230,-1508.43 230,-1478.43 230,-1478.43 230,-1472.43 236,-1466.43 242,-1466.43 242,-1466.43 634,-1466.43 634,-1466.43 640,-1466.43 646,-1472.43 646,-1478.43 646,-1478.43 646,-1508.43 646,-1508.43 646,-1514.43 640,-1520.43 634,-1520.43"/>
+<text text-anchor="middle" x="438" y="-1502.63" font-family="DejaVu Sans" font-size="11.00">IR %14 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="438" y="-1490.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="438" y="-1478.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g2 -->
+<g id="node6" class="node">
+<title>g2</title>
+<g id="a_node6"><a xlink:href="#node-ir-23" xlink:title="unverified: IR %23 … IR %30 · 2 blocks" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M624,-1405.43C624,-1405.43 420,-1405.43 420,-1405.43 414,-1405.43 408,-1399.43 408,-1393.43 408,-1393.43 408,-1363.43 408,-1363.43 408,-1357.43 414,-1351.43 420,-1351.43 420,-1351.43 624,-1351.43 624,-1351.43 630,-1351.43 636,-1357.43 636,-1363.43 636,-1363.43 636,-1393.43 636,-1393.43 636,-1399.43 630,-1405.43 624,-1405.43"/>
+<text text-anchor="middle" x="522" y="-1387.63" font-family="DejaVu Sans" font-size="11.00">IR %23 … IR %30 · 2 blocks &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="522" y="-1375.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="522" y="-1363.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 2 unknown</text>
+</a>
+</g>
+</g>
+<!-- g3 -->
+<g id="node7" class="node">
+<title>g3</title>
+<g id="a_node7"><a xlink:href="#node-ir-42" xlink:title="unverified: IR %42" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M718,-1290.43C718,-1290.43 326,-1290.43 326,-1290.43 320,-1290.43 314,-1284.43 314,-1278.43 314,-1278.43 314,-1248.43 314,-1248.43 314,-1242.43 320,-1236.43 326,-1236.43 326,-1236.43 718,-1236.43 718,-1236.43 724,-1236.43 730,-1242.43 730,-1248.43 730,-1248.43 730,-1278.43 730,-1278.43 730,-1284.43 724,-1290.43 718,-1290.43"/>
+<text text-anchor="middle" x="522" y="-1272.63" font-family="DejaVu Sans" font-size="11.00">IR %42 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="522" y="-1260.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="522" y="-1248.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g4 -->
+<g id="node8" class="node">
+<title>g4</title>
+<g id="a_node8"><a xlink:href="#node-ir-53" xlink:title="unverified: IR %53" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M524.5,-1175.43C524.5,-1175.43 333.5,-1175.43 333.5,-1175.43 327.5,-1175.43 321.5,-1169.43 321.5,-1163.43 321.5,-1163.43 321.5,-1133.43 321.5,-1133.43 321.5,-1127.43 327.5,-1121.43 333.5,-1121.43 333.5,-1121.43 524.5,-1121.43 524.5,-1121.43 530.5,-1121.43 536.5,-1127.43 536.5,-1133.43 536.5,-1133.43 536.5,-1163.43 536.5,-1163.43 536.5,-1169.43 530.5,-1175.43 524.5,-1175.43"/>
+<text text-anchor="middle" x="429" y="-1157.63" font-family="DejaVu Sans" font-size="11.00">IR %53 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="429" y="-1145.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="429" y="-1133.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g5 -->
+<g id="node9" class="node">
+<title>g5</title>
+<g id="a_node9"><a xlink:href="#node-ir-60" xlink:title="unverified: IR %60" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M357.5,-1060.43C357.5,-1060.43 166.5,-1060.43 166.5,-1060.43 160.5,-1060.43 154.5,-1054.43 154.5,-1048.43 154.5,-1048.43 154.5,-1018.43 154.5,-1018.43 154.5,-1012.43 160.5,-1006.43 166.5,-1006.43 166.5,-1006.43 357.5,-1006.43 357.5,-1006.43 363.5,-1006.43 369.5,-1012.43 369.5,-1018.43 369.5,-1018.43 369.5,-1048.43 369.5,-1048.43 369.5,-1054.43 363.5,-1060.43 357.5,-1060.43"/>
+<text text-anchor="middle" x="262" y="-1042.63" font-family="DejaVu Sans" font-size="11.00">IR %60 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="262" y="-1030.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="262" y="-1018.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g6 -->
+<g id="node10" class="node">
+<title>g6</title>
+<g id="a_node10"><a xlink:href="#node-BB398" xlink:title="uncovered: BB398" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M730,-1175.43C730,-1175.43 586,-1175.43 586,-1175.43 580,-1175.43 574,-1169.43 574,-1163.43 574,-1163.43 574,-1133.43 574,-1133.43 574,-1127.43 580,-1121.43 586,-1121.43 586,-1121.43 730,-1121.43 730,-1121.43 736,-1121.43 742,-1127.43 742,-1133.43 742,-1133.43 742,-1163.43 742,-1163.43 742,-1169.43 736,-1175.43 730,-1175.43"/>
+<text text-anchor="middle" x="658" y="-1157.63" font-family="DejaVu Sans" font-size="11.00">BB398 &#160;| &#160;line 2250</text>
+<text text-anchor="middle" x="658" y="-1145.63" font-family="DejaVu Sans" font-size="11.00">if (item != parent&#45;&gt;child)</text>
+<text text-anchor="middle" x="658" y="-1133.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g7 -->
+<g id="node11" class="node">
+<title>g7</title>
+<g id="a_node11"><a xlink:href="#node-ir-77" xlink:title="unverified: IR %77" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M776.5,-1060.43C776.5,-1060.43 585.5,-1060.43 585.5,-1060.43 579.5,-1060.43 573.5,-1054.43 573.5,-1048.43 573.5,-1048.43 573.5,-1018.43 573.5,-1018.43 573.5,-1012.43 579.5,-1006.43 585.5,-1006.43 585.5,-1006.43 776.5,-1006.43 776.5,-1006.43 782.5,-1006.43 788.5,-1012.43 788.5,-1018.43 788.5,-1018.43 788.5,-1048.43 788.5,-1048.43 788.5,-1054.43 782.5,-1060.43 776.5,-1060.43"/>
+<text text-anchor="middle" x="681" y="-1042.63" font-family="DejaVu Sans" font-size="11.00">IR %77 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="681" y="-1030.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="681" y="-1018.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g8 -->
+<g id="node12" class="node">
+<title>g8</title>
+<g id="a_node12"><a xlink:href="#node-BB399" xlink:title="uncovered: BB399" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M614,-955.43C614,-955.43 478,-955.43 478,-955.43 472,-955.43 466,-949.43 466,-943.43 466,-943.43 466,-913.43 466,-913.43 466,-907.43 472,-901.43 478,-901.43 478,-901.43 614,-901.43 614,-901.43 620,-901.43 626,-907.43 626,-913.43 626,-913.43 626,-943.43 626,-943.43 626,-949.43 620,-955.43 614,-955.43"/>
+<text text-anchor="middle" x="546" y="-937.63" font-family="DejaVu Sans" font-size="11.00">BB399 &#160;| &#160;line 2255</text>
+<text text-anchor="middle" x="546" y="-925.63" font-family="DejaVu Sans" font-size="11.00">if (item&#45;&gt;next != NULL)</text>
+<text text-anchor="middle" x="546" y="-913.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g9 -->
+<g id="node13" class="node">
+<title>g9</title>
+<g id="a_node13"><a xlink:href="#node-ir-100" xlink:title="unverified: IR %100" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M693.5,-840.43C693.5,-840.43 502.5,-840.43 502.5,-840.43 496.5,-840.43 490.5,-834.43 490.5,-828.43 490.5,-828.43 490.5,-798.43 490.5,-798.43 490.5,-792.43 496.5,-786.43 502.5,-786.43 502.5,-786.43 693.5,-786.43 693.5,-786.43 699.5,-786.43 705.5,-792.43 705.5,-798.43 705.5,-798.43 705.5,-828.43 705.5,-828.43 705.5,-834.43 699.5,-840.43 693.5,-840.43"/>
+<text text-anchor="middle" x="598" y="-822.63" font-family="DejaVu Sans" font-size="11.00">IR %100 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="598" y="-810.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="598" y="-798.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g10 -->
+<g id="node14" class="node">
+<title>g10</title>
+<g id="a_node14"><a xlink:href="#node-BB400" xlink:title="uncovered: BB400" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M548.5,-735.43C548.5,-735.43 399.5,-735.43 399.5,-735.43 393.5,-735.43 387.5,-729.43 387.5,-723.43 387.5,-723.43 387.5,-693.43 387.5,-693.43 387.5,-687.43 393.5,-681.43 399.5,-681.43 399.5,-681.43 548.5,-681.43 548.5,-681.43 554.5,-681.43 560.5,-687.43 560.5,-693.43 560.5,-693.43 560.5,-723.43 560.5,-723.43 560.5,-729.43 554.5,-735.43 548.5,-735.43"/>
+<text text-anchor="middle" x="474" y="-717.63" font-family="DejaVu Sans" font-size="11.00">BB400 &#160;| &#160;line 2261</text>
+<text text-anchor="middle" x="474" y="-705.63" font-family="DejaVu Sans" font-size="11.00">if (item == parent&#45;&gt;child)</text>
+<text text-anchor="middle" x="474" y="-693.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g11 -->
+<g id="node15" class="node">
+<title>g11</title>
+<g id="a_node15"><a xlink:href="#node-ir-124" xlink:title="unverified: IR %124" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M487.5,-541.43C487.5,-541.43 296.5,-541.43 296.5,-541.43 290.5,-541.43 284.5,-535.43 284.5,-529.43 284.5,-529.43 284.5,-499.43 284.5,-499.43 284.5,-493.43 290.5,-487.43 296.5,-487.43 296.5,-487.43 487.5,-487.43 487.5,-487.43 493.5,-487.43 499.5,-493.43 499.5,-499.43 499.5,-499.43 499.5,-529.43 499.5,-529.43 499.5,-535.43 493.5,-541.43 487.5,-541.43"/>
+<text text-anchor="middle" x="392" y="-523.63" font-family="DejaVu Sans" font-size="11.00">IR %124 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="392" y="-511.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="392" y="-499.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g12 -->
+<g id="node16" class="node">
+<title>g12</title>
+<g id="a_node16"><a xlink:href="#node-BB401" xlink:title="uncovered: BB401" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M620.5,-620.43C620.5,-620.43 453.5,-620.43 453.5,-620.43 447.5,-620.43 441.5,-614.43 441.5,-608.43 441.5,-608.43 441.5,-578.43 441.5,-578.43 441.5,-572.43 447.5,-566.43 453.5,-566.43 453.5,-566.43 620.5,-566.43 620.5,-566.43 626.5,-566.43 632.5,-572.43 632.5,-578.43 632.5,-578.43 632.5,-608.43 632.5,-608.43 632.5,-614.43 626.5,-620.43 620.5,-620.43"/>
+<text text-anchor="middle" x="537" y="-602.63" font-family="DejaVu Sans" font-size="11.00">BB401 &#160;| &#160;line 2266</text>
+<text text-anchor="middle" x="537" y="-590.63" font-family="DejaVu Sans" font-size="11.00">else if (item&#45;&gt;next == NULL)</text>
+<text text-anchor="middle" x="537" y="-578.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g13 -->
+<g id="node17" class="node">
+<title>g13</title>
+<g id="a_node17"><a xlink:href="#node-ir-145" xlink:title="unverified: IR %145" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M789.5,-462.43C789.5,-462.43 598.5,-462.43 598.5,-462.43 592.5,-462.43 586.5,-456.43 586.5,-450.43 586.5,-450.43 586.5,-420.43 586.5,-420.43 586.5,-414.43 592.5,-408.43 598.5,-408.43 598.5,-408.43 789.5,-408.43 789.5,-408.43 795.5,-408.43 801.5,-414.43 801.5,-420.43 801.5,-420.43 801.5,-450.43 801.5,-450.43 801.5,-456.43 795.5,-462.43 789.5,-462.43"/>
+<text text-anchor="middle" x="694" y="-444.63" font-family="DejaVu Sans" font-size="11.00">IR %145 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="694" y="-432.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="694" y="-420.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g14 -->
+<g id="node18" class="node">
+<title>g14</title>
+<g id="a_node18"><a xlink:href="#node-ir-159" xlink:title="unverified: IR %159" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M639.5,-357.43C639.5,-357.43 448.5,-357.43 448.5,-357.43 442.5,-357.43 436.5,-351.43 436.5,-345.43 436.5,-345.43 436.5,-315.43 436.5,-315.43 436.5,-309.43 442.5,-303.43 448.5,-303.43 448.5,-303.43 639.5,-303.43 639.5,-303.43 645.5,-303.43 651.5,-309.43 651.5,-315.43 651.5,-315.43 651.5,-345.43 651.5,-345.43 651.5,-351.43 645.5,-357.43 639.5,-357.43"/>
+<text text-anchor="middle" x="544" y="-339.63" font-family="DejaVu Sans" font-size="11.00">IR %159 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="544" y="-327.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="544" y="-315.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g15 -->
+<g id="node19" class="node">
+<title>g15</title>
+<g id="a_node19"><a xlink:href="#node-BB402" xlink:title="uncovered: BB402" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M447,-252.43C447,-252.43 327,-252.43 327,-252.43 321,-252.43 315,-246.43 315,-240.43 315,-240.43 315,-210.43 315,-210.43 315,-204.43 321,-198.43 327,-198.43 327,-198.43 447,-198.43 447,-198.43 453,-198.43 459,-204.43 459,-210.43 459,-210.43 459,-240.43 459,-240.43 459,-246.43 453,-252.43 447,-252.43"/>
+<text text-anchor="middle" x="387" y="-234.63" font-family="DejaVu Sans" font-size="11.00">BB402 &#160;| &#160;line 2273</text>
+<text text-anchor="middle" x="387" y="-222.63" font-family="DejaVu Sans" font-size="11.00">item&#45;&gt;prev = NULL;</text>
+<text text-anchor="middle" x="387" y="-210.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g16 -->
+<g id="node20" class="node">
+<title>g16</title>
+<g id="a_node20"><a xlink:href="#node-BB403" xlink:title="uncovered: BB403" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M341,-147.43C341,-147.43 221,-147.43 221,-147.43 215,-147.43 209,-141.43 209,-135.43 209,-135.43 209,-105.43 209,-105.43 209,-99.43 215,-93.43 221,-93.43 221,-93.43 341,-93.43 341,-93.43 347,-93.43 353,-99.43 353,-105.43 353,-105.43 353,-135.43 353,-135.43 353,-141.43 347,-147.43 341,-147.43"/>
+<text text-anchor="middle" x="281" y="-129.63" font-family="DejaVu Sans" font-size="11.00">BB403 &#160;| &#160;line 2277</text>
+<text text-anchor="middle" x="281" y="-117.63" font-family="DejaVu Sans" font-size="11.00">}</text>
+<text text-anchor="middle" x="281" y="-105.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<div class="graph" data-graph="full" hidden><svg width="834pt" height="1877pt"
+ viewBox="0.00 0.00 833.70 1877.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 1855.45)">
+<title>CFG</title>
+<!-- start&#45;&gt;g0 -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;g0</title>
+<path fill="none" stroke="#69798a" stroke-width="1.8" d="M208,-1791.02C208,-1778.49 208,-1762.2 208,-1747.86"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.8" points="210.45,-1747.57 208,-1740.57 205.55,-1747.57 210.45,-1747.57"/>
+</g>
+<!-- g0&#45;&gt;g1 -->
+<g id="edge2" class="edge">
+<title>g0&#45;&gt;g1</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M261.06,-1686.36C296.03,-1669.18 341.89,-1646.65 378.16,-1628.83"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="379.61,-1630.84 384.81,-1625.56 377.45,-1626.44 379.61,-1630.84"/>
+<text text-anchor="middle" x="341.5" y="-1653.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g0&#45;&gt;g6 -->
+<g id="edge3" class="edge">
+<title>g0&#45;&gt;g6</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M201.74,-1686.22C193.76,-1652.84 181,-1599.43 181,-1599.43 181,-1599.43 181,-1599.43 181,-1147.43 181,-1147.43 209.9,-1100.09 230.3,-1066.69"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="232.44,-1067.89 234,-1060.63 228.26,-1065.33 232.44,-1067.89"/>
+<text text-anchor="middle" x="191" y="-1375.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g1&#45;&gt;g2 -->
+<g id="edge4" class="edge">
+<title>g1&#45;&gt;g2</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M449.83,-1571.22C457.1,-1555.1 466.48,-1534.32 474.24,-1517.13"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="476.59,-1517.88 477.24,-1510.49 472.12,-1515.87 476.59,-1517.88"/>
+<text text-anchor="middle" x="477.5" y="-1538.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g1&#45;&gt;g6 -->
+<g id="edge5" class="edge">
+<title>g1&#45;&gt;g6</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M394.4,-1571.22C338.86,-1537.84 250,-1484.43 250,-1484.43 250,-1484.43 250,-1484.43 250,-1147.43 250,-1147.43 250,-1101.26 250,-1067.95"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="252.45,-1067.63 250,-1060.63 247.55,-1067.63 252.45,-1067.63"/>
+<text text-anchor="middle" x="260" y="-1318.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g2&#45;&gt;g3 -->
+<g id="edge6" class="edge">
+<title>g2&#45;&gt;g3</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M493.59,-1456.17C495.89,-1442.97 498.71,-1426.84 501.17,-1412.78"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="503.63,-1412.95 502.42,-1405.64 498.8,-1412.11 503.63,-1412.95"/>
+</g>
+<!-- g3&#45;&gt;g4 -->
+<g id="edge7" class="edge">
+<title>g3&#45;&gt;g4</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M507,-1351.22C507,-1335.24 507,-1314.68 507,-1297.59"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="509.45,-1297.49 507,-1290.49 504.55,-1297.49 509.45,-1297.49"/>
+<text text-anchor="middle" x="517" y="-1318.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g3&#45;&gt;g7 -->
+<g id="edge8" class="edge">
+<title>g3&#45;&gt;g7</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M574.21,-1351.32C640.19,-1325.7 731,-1290.43 731,-1290.43 731,-1290.43 731,-1236.43 731,-1236.43 731,-1236.43 700.96,-1205.68 676.6,-1180.75"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="678.15,-1178.82 671.5,-1175.53 674.64,-1182.25 678.15,-1178.82"/>
+<text text-anchor="middle" x="743.5" y="-1260.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g4&#45;&gt;g5 -->
+<g id="edge9" class="edge">
+<title>g4&#45;&gt;g5</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M486.13,-1236.22C473.06,-1219.82 456.15,-1198.58 442.32,-1181.22"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="444.04,-1179.44 437.76,-1175.49 440.21,-1182.49 444.04,-1179.44"/>
+<text text-anchor="middle" x="474" y="-1203.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g4&#45;&gt;g7 -->
+<g id="edge10" class="edge">
+<title>g4&#45;&gt;g7</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M539.24,-1236.22C559.85,-1219.46 586.68,-1197.65 608.28,-1180.09"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="610.05,-1181.81 613.94,-1175.49 606.96,-1178.01 610.05,-1181.81"/>
+<text text-anchor="middle" x="592.5" y="-1203.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g5&#45;&gt;g6 -->
+<g id="edge11" class="edge">
+<title>g5&#45;&gt;g6</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M378.27,-1121.22C353.18,-1104.25 320.45,-1082.1 294.33,-1064.42"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="295.69,-1062.39 288.52,-1060.49 292.95,-1066.44 295.69,-1062.39"/>
+</g>
+<!-- g6&#45;&gt;g17 -->
+<g id="edge12" class="edge">
+<title>g6&#45;&gt;g17</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M250,-1006.17C250,-975.65 250,-929.43 250,-929.43 250,-929.43 250,-929.43 250,-224.43 250,-224.43 257.31,-184.81 262.86,-154.71"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="265.3,-155.01 264.16,-147.68 260.48,-154.12 265.3,-155.01"/>
+</g>
+<!-- g7&#45;&gt;g8 -->
+<g id="edge13" class="edge">
+<title>g7&#45;&gt;g8</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M651.33,-1121.22C654.59,-1105.24 658.77,-1084.68 662.25,-1067.59"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="664.7,-1067.84 663.69,-1060.49 659.9,-1066.86 664.7,-1067.84"/>
+<text text-anchor="middle" x="668" y="-1088.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g7&#45;&gt;g9 -->
+<g id="edge14" class="edge">
+<title>g7&#45;&gt;g9</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M608.5,-1121.32C571.68,-1095.7 521,-1060.43 521,-1060.43 521,-1060.43 521,-1006.43 521,-1006.43 521,-1006.43 524.9,-983.35 528.42,-962.46"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="530.85,-962.81 529.6,-955.5 526.02,-961.99 530.85,-962.81"/>
+<text text-anchor="middle" x="533.5" y="-1030.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g8&#45;&gt;g9 -->
+<g id="edge15" class="edge">
+<title>g8&#45;&gt;g9</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M634.58,-1006.17C616.18,-992.12 593.41,-974.75 574.19,-960.09"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="575.4,-957.93 568.35,-955.64 572.43,-961.83 575.4,-957.93"/>
+</g>
+<!-- g9&#45;&gt;g10 -->
+<g id="edge16" class="edge">
+<title>g9&#45;&gt;g10</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M546.06,-901.22C553.48,-885.1 563.04,-864.32 570.95,-847.13"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="573.3,-847.88 574,-840.49 568.85,-845.83 573.3,-847.88"/>
+<text text-anchor="middle" x="571" y="-868.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g9&#45;&gt;g11 -->
+<g id="edge17" class="edge">
+<title>g9&#45;&gt;g11</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M505.2,-901.32C476.92,-875.7 438,-840.43 438,-840.43 438,-840.43 438,-786.43 438,-786.43 438,-786.43 445.26,-763.15 451.79,-742.19"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="454.13,-742.91 453.87,-735.5 449.45,-741.45 454.13,-742.91"/>
+<text text-anchor="middle" x="450.5" y="-810.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g10&#45;&gt;g11 -->
+<g id="edge18" class="edge">
+<title>g10&#45;&gt;g11</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M554.39,-786.17C537.63,-772.25 516.93,-755.05 499.38,-740.47"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="500.5,-738.22 493.55,-735.64 497.37,-741.99 500.5,-738.22"/>
+</g>
+<!-- g11&#45;&gt;g12 -->
+<g id="edge19" class="edge">
+<title>g11&#45;&gt;g12</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M447.6,-681.32C433.46,-655.7 414,-620.43 414,-620.43 414,-620.43 400.66,-579.22 390.69,-548.44"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="392.98,-547.56 388.49,-541.65 388.32,-549.07 392.98,-547.56"/>
+<text text-anchor="middle" x="442" y="-648.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g11&#45;&gt;g13 -->
+<g id="edge20" class="edge">
+<title>g11&#45;&gt;g13</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M476.61,-681.22C485.68,-664.96 497.39,-643.95 507.02,-626.67"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="509.2,-627.8 510.47,-620.49 504.92,-625.41 509.2,-627.8"/>
+<text text-anchor="middle" x="507.5" y="-648.43" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g12&#45;&gt;g16 -->
+<g id="edge21" class="edge">
+<title>g12&#45;&gt;g16</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M379.54,-487.2C378.63,-434.78 376.58,-317.19 375.58,-259.55"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="378.03,-259.45 375.45,-252.49 373.13,-259.53 378.03,-259.45"/>
+</g>
+<!-- g13&#45;&gt;g14 -->
+<g id="edge22" class="edge">
+<title>g13&#45;&gt;g14</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M551.45,-566.32C578.9,-539.21 621.86,-496.79 651.16,-467.86"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="653.21,-469.28 656.47,-462.62 649.77,-465.8 653.21,-469.28"/>
+<text text-anchor="middle" x="637" y="-511.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">true</text>
+</g>
+<!-- g13&#45;&gt;g15 -->
+<g id="edge23" class="edge">
+<title>g13&#45;&gt;g15</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M525.71,-565.96C526.99,-518.06 529.7,-417.09 531.11,-364.64"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="533.56,-364.63 531.3,-357.57 528.66,-364.5 533.56,-364.63"/>
+<text text-anchor="middle" x="541.5" y="-432.93" font-family="DejaVu Sans" font-size="10.00" fill="#475569">false</text>
+</g>
+<!-- g14&#45;&gt;g15 -->
+<g id="edge24" class="edge">
+<title>g14&#45;&gt;g15</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M644.51,-408.17C623.66,-393.95 597.81,-376.32 576.15,-361.54"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="577.33,-359.38 570.16,-357.46 574.56,-363.43 577.33,-359.38"/>
+</g>
+<!-- g15&#45;&gt;g16 -->
+<g id="edge25" class="edge">
+<title>g15&#45;&gt;g16</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M491.98,-303.17C470.21,-288.89 443.2,-271.17 420.62,-256.35"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="421.88,-254.25 414.68,-252.46 419.19,-258.35 421.88,-254.25"/>
+</g>
+<!-- g16&#45;&gt;g17 -->
+<g id="edge26" class="edge">
+<title>g16&#45;&gt;g17</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M347.98,-198.17C333.77,-184.37 316.26,-167.35 301.34,-152.85"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="302.7,-150.76 295.97,-147.64 299.29,-154.27 302.7,-150.76"/>
+</g>
+<!-- g17&#45;&gt;finish -->
+<g id="edge27" class="edge">
+<title>g17&#45;&gt;finish</title>
+<path fill="none" stroke="#69798a" stroke-width="1.25" d="M269,-93.38C269,-79.9 269,-63.45 269,-49.76"/>
+<polygon fill="#69798a" stroke="#69798a" stroke-width="1.25" points="271.45,-49.48 269,-42.48 266.55,-49.48 271.45,-49.48"/>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="208" cy="-1812.64" rx="45.01" ry="21.43"/>
+<text text-anchor="middle" x="208" y="-1809.84" font-family="DejaVu Sans" font-size="11.00">ENTRY</text>
+</g>
+<!-- finish -->
+<g id="node2" class="node">
+<title>finish</title>
+<ellipse fill="#f0f4f8" stroke="#64748b" stroke-width="1.3" cx="269" cy="-21.21" rx="37.45" ry="21.43"/>
+<text text-anchor="middle" x="269" y="-18.41" font-family="DejaVu Sans" font-size="11.00">EXIT</text>
+</g>
+<!-- abort -->
+<!-- g0 -->
+<g id="node4" class="node">
+<title>g0</title>
+<g id="a_node4"><a xlink:href="#node-BB397" xlink:title="uncovered: BB397" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M404,-1740.43C404,-1740.43 12,-1740.43 12,-1740.43 6,-1740.43 0,-1734.43 0,-1728.43 0,-1728.43 0,-1698.43 0,-1698.43 0,-1692.43 6,-1686.43 12,-1686.43 12,-1686.43 404,-1686.43 404,-1686.43 410,-1686.43 416,-1692.43 416,-1698.43 416,-1698.43 416,-1728.43 416,-1728.43 416,-1734.43 410,-1740.43 404,-1740.43"/>
+<text text-anchor="middle" x="208" y="-1722.63" font-family="DejaVu Sans" font-size="11.00">BB397 &#160;| &#160;line 2244</text>
+<text text-anchor="middle" x="208" y="-1710.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="208" y="-1698.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g1 -->
+<g id="node5" class="node">
+<title>g1</title>
+<g id="a_node5"><a xlink:href="#node-ir-14" xlink:title="unverified: IR %14" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M634,-1625.43C634,-1625.43 242,-1625.43 242,-1625.43 236,-1625.43 230,-1619.43 230,-1613.43 230,-1613.43 230,-1583.43 230,-1583.43 230,-1577.43 236,-1571.43 242,-1571.43 242,-1571.43 634,-1571.43 634,-1571.43 640,-1571.43 646,-1577.43 646,-1583.43 646,-1583.43 646,-1613.43 646,-1613.43 646,-1619.43 640,-1625.43 634,-1625.43"/>
+<text text-anchor="middle" x="438" y="-1607.63" font-family="DejaVu Sans" font-size="11.00">IR %14 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="438" y="-1595.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="438" y="-1583.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g2 -->
+<g id="node6" class="node">
+<title>g2</title>
+<g id="a_node6"><a xlink:href="#node-ir-23" xlink:title="unverified: IR %23" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M584.5,-1510.43C584.5,-1510.43 393.5,-1510.43 393.5,-1510.43 387.5,-1510.43 381.5,-1504.43 381.5,-1498.43 381.5,-1498.43 381.5,-1468.43 381.5,-1468.43 381.5,-1462.43 387.5,-1456.43 393.5,-1456.43 393.5,-1456.43 584.5,-1456.43 584.5,-1456.43 590.5,-1456.43 596.5,-1462.43 596.5,-1468.43 596.5,-1468.43 596.5,-1498.43 596.5,-1498.43 596.5,-1504.43 590.5,-1510.43 584.5,-1510.43"/>
+<text text-anchor="middle" x="489" y="-1492.63" font-family="DejaVu Sans" font-size="11.00">IR %23 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="489" y="-1480.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="489" y="-1468.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g3 -->
+<g id="node7" class="node">
+<title>g3</title>
+<g id="a_node7"><a xlink:href="#node-ir-30" xlink:title="unverified: IR %30" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M703,-1405.43C703,-1405.43 311,-1405.43 311,-1405.43 305,-1405.43 299,-1399.43 299,-1393.43 299,-1393.43 299,-1363.43 299,-1363.43 299,-1357.43 305,-1351.43 311,-1351.43 311,-1351.43 703,-1351.43 703,-1351.43 709,-1351.43 715,-1357.43 715,-1363.43 715,-1363.43 715,-1393.43 715,-1393.43 715,-1399.43 709,-1405.43 703,-1405.43"/>
+<text text-anchor="middle" x="507" y="-1387.63" font-family="DejaVu Sans" font-size="11.00">IR %30 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="507" y="-1375.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="507" y="-1363.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g4 -->
+<g id="node8" class="node">
+<title>g4</title>
+<g id="a_node8"><a xlink:href="#node-ir-42" xlink:title="unverified: IR %42" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M703,-1290.43C703,-1290.43 311,-1290.43 311,-1290.43 305,-1290.43 299,-1284.43 299,-1278.43 299,-1278.43 299,-1248.43 299,-1248.43 299,-1242.43 305,-1236.43 311,-1236.43 311,-1236.43 703,-1236.43 703,-1236.43 709,-1236.43 715,-1242.43 715,-1248.43 715,-1248.43 715,-1278.43 715,-1278.43 715,-1284.43 709,-1290.43 703,-1290.43"/>
+<text text-anchor="middle" x="507" y="-1272.63" font-family="DejaVu Sans" font-size="11.00">IR %42 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="507" y="-1260.63" font-family="DejaVu Sans" font-size="11.00">if ((parent == NULL) || (item == NULL) || (item != parent&#45;&gt;child &amp;&amp; it</text>
+<text text-anchor="middle" x="507" y="-1248.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g5 -->
+<g id="node9" class="node">
+<title>g5</title>
+<g id="a_node9"><a xlink:href="#node-ir-53" xlink:title="unverified: IR %53" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M512.5,-1175.43C512.5,-1175.43 321.5,-1175.43 321.5,-1175.43 315.5,-1175.43 309.5,-1169.43 309.5,-1163.43 309.5,-1163.43 309.5,-1133.43 309.5,-1133.43 309.5,-1127.43 315.5,-1121.43 321.5,-1121.43 321.5,-1121.43 512.5,-1121.43 512.5,-1121.43 518.5,-1121.43 524.5,-1127.43 524.5,-1133.43 524.5,-1133.43 524.5,-1163.43 524.5,-1163.43 524.5,-1169.43 518.5,-1175.43 512.5,-1175.43"/>
+<text text-anchor="middle" x="417" y="-1157.63" font-family="DejaVu Sans" font-size="11.00">IR %53 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="417" y="-1145.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="417" y="-1133.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g6 -->
+<g id="node10" class="node">
+<title>g6</title>
+<g id="a_node10"><a xlink:href="#node-ir-60" xlink:title="unverified: IR %60" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M345.5,-1060.43C345.5,-1060.43 154.5,-1060.43 154.5,-1060.43 148.5,-1060.43 142.5,-1054.43 142.5,-1048.43 142.5,-1048.43 142.5,-1018.43 142.5,-1018.43 142.5,-1012.43 148.5,-1006.43 154.5,-1006.43 154.5,-1006.43 345.5,-1006.43 345.5,-1006.43 351.5,-1006.43 357.5,-1012.43 357.5,-1018.43 357.5,-1018.43 357.5,-1048.43 357.5,-1048.43 357.5,-1054.43 351.5,-1060.43 345.5,-1060.43"/>
+<text text-anchor="middle" x="250" y="-1042.63" font-family="DejaVu Sans" font-size="11.00">IR %60 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="250" y="-1030.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="250" y="-1018.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g7 -->
+<g id="node11" class="node">
+<title>g7</title>
+<g id="a_node11"><a xlink:href="#node-BB398" xlink:title="uncovered: BB398" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M718,-1175.43C718,-1175.43 574,-1175.43 574,-1175.43 568,-1175.43 562,-1169.43 562,-1163.43 562,-1163.43 562,-1133.43 562,-1133.43 562,-1127.43 568,-1121.43 574,-1121.43 574,-1121.43 718,-1121.43 718,-1121.43 724,-1121.43 730,-1127.43 730,-1133.43 730,-1133.43 730,-1163.43 730,-1163.43 730,-1169.43 724,-1175.43 718,-1175.43"/>
+<text text-anchor="middle" x="646" y="-1157.63" font-family="DejaVu Sans" font-size="11.00">BB398 &#160;| &#160;line 2250</text>
+<text text-anchor="middle" x="646" y="-1145.63" font-family="DejaVu Sans" font-size="11.00">if (item != parent&#45;&gt;child)</text>
+<text text-anchor="middle" x="646" y="-1133.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g8 -->
+<g id="node12" class="node">
+<title>g8</title>
+<g id="a_node12"><a xlink:href="#node-ir-77" xlink:title="unverified: IR %77" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M764.5,-1060.43C764.5,-1060.43 573.5,-1060.43 573.5,-1060.43 567.5,-1060.43 561.5,-1054.43 561.5,-1048.43 561.5,-1048.43 561.5,-1018.43 561.5,-1018.43 561.5,-1012.43 567.5,-1006.43 573.5,-1006.43 573.5,-1006.43 764.5,-1006.43 764.5,-1006.43 770.5,-1006.43 776.5,-1012.43 776.5,-1018.43 776.5,-1018.43 776.5,-1048.43 776.5,-1048.43 776.5,-1054.43 770.5,-1060.43 764.5,-1060.43"/>
+<text text-anchor="middle" x="669" y="-1042.63" font-family="DejaVu Sans" font-size="11.00">IR %77 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="669" y="-1030.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="669" y="-1018.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g9 -->
+<g id="node13" class="node">
+<title>g9</title>
+<g id="a_node13"><a xlink:href="#node-BB399" xlink:title="uncovered: BB399" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M602,-955.43C602,-955.43 466,-955.43 466,-955.43 460,-955.43 454,-949.43 454,-943.43 454,-943.43 454,-913.43 454,-913.43 454,-907.43 460,-901.43 466,-901.43 466,-901.43 602,-901.43 602,-901.43 608,-901.43 614,-907.43 614,-913.43 614,-913.43 614,-943.43 614,-943.43 614,-949.43 608,-955.43 602,-955.43"/>
+<text text-anchor="middle" x="534" y="-937.63" font-family="DejaVu Sans" font-size="11.00">BB399 &#160;| &#160;line 2255</text>
+<text text-anchor="middle" x="534" y="-925.63" font-family="DejaVu Sans" font-size="11.00">if (item&#45;&gt;next != NULL)</text>
+<text text-anchor="middle" x="534" y="-913.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g10 -->
+<g id="node14" class="node">
+<title>g10</title>
+<g id="a_node14"><a xlink:href="#node-ir-100" xlink:title="unverified: IR %100" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M681.5,-840.43C681.5,-840.43 490.5,-840.43 490.5,-840.43 484.5,-840.43 478.5,-834.43 478.5,-828.43 478.5,-828.43 478.5,-798.43 478.5,-798.43 478.5,-792.43 484.5,-786.43 490.5,-786.43 490.5,-786.43 681.5,-786.43 681.5,-786.43 687.5,-786.43 693.5,-792.43 693.5,-798.43 693.5,-798.43 693.5,-828.43 693.5,-828.43 693.5,-834.43 687.5,-840.43 681.5,-840.43"/>
+<text text-anchor="middle" x="586" y="-822.63" font-family="DejaVu Sans" font-size="11.00">IR %100 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="586" y="-810.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="586" y="-798.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g11 -->
+<g id="node15" class="node">
+<title>g11</title>
+<g id="a_node15"><a xlink:href="#node-BB400" xlink:title="uncovered: BB400" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M536.5,-735.43C536.5,-735.43 387.5,-735.43 387.5,-735.43 381.5,-735.43 375.5,-729.43 375.5,-723.43 375.5,-723.43 375.5,-693.43 375.5,-693.43 375.5,-687.43 381.5,-681.43 387.5,-681.43 387.5,-681.43 536.5,-681.43 536.5,-681.43 542.5,-681.43 548.5,-687.43 548.5,-693.43 548.5,-693.43 548.5,-723.43 548.5,-723.43 548.5,-729.43 542.5,-735.43 536.5,-735.43"/>
+<text text-anchor="middle" x="462" y="-717.63" font-family="DejaVu Sans" font-size="11.00">BB400 &#160;| &#160;line 2261</text>
+<text text-anchor="middle" x="462" y="-705.63" font-family="DejaVu Sans" font-size="11.00">if (item == parent&#45;&gt;child)</text>
+<text text-anchor="middle" x="462" y="-693.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g12 -->
+<g id="node16" class="node">
+<title>g12</title>
+<g id="a_node16"><a xlink:href="#node-ir-124" xlink:title="unverified: IR %124" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M475.5,-541.43C475.5,-541.43 284.5,-541.43 284.5,-541.43 278.5,-541.43 272.5,-535.43 272.5,-529.43 272.5,-529.43 272.5,-499.43 272.5,-499.43 272.5,-493.43 278.5,-487.43 284.5,-487.43 284.5,-487.43 475.5,-487.43 475.5,-487.43 481.5,-487.43 487.5,-493.43 487.5,-499.43 487.5,-499.43 487.5,-529.43 487.5,-529.43 487.5,-535.43 481.5,-541.43 475.5,-541.43"/>
+<text text-anchor="middle" x="380" y="-523.63" font-family="DejaVu Sans" font-size="11.00">IR %124 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="380" y="-511.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="380" y="-499.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g13 -->
+<g id="node17" class="node">
+<title>g13</title>
+<g id="a_node17"><a xlink:href="#node-BB401" xlink:title="uncovered: BB401" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M608.5,-620.43C608.5,-620.43 441.5,-620.43 441.5,-620.43 435.5,-620.43 429.5,-614.43 429.5,-608.43 429.5,-608.43 429.5,-578.43 429.5,-578.43 429.5,-572.43 435.5,-566.43 441.5,-566.43 441.5,-566.43 608.5,-566.43 608.5,-566.43 614.5,-566.43 620.5,-572.43 620.5,-578.43 620.5,-578.43 620.5,-608.43 620.5,-608.43 620.5,-614.43 614.5,-620.43 608.5,-620.43"/>
+<text text-anchor="middle" x="525" y="-602.63" font-family="DejaVu Sans" font-size="11.00">BB401 &#160;| &#160;line 2266</text>
+<text text-anchor="middle" x="525" y="-590.63" font-family="DejaVu Sans" font-size="11.00">else if (item&#45;&gt;next == NULL)</text>
+<text text-anchor="middle" x="525" y="-578.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g14 -->
+<g id="node18" class="node">
+<title>g14</title>
+<g id="a_node18"><a xlink:href="#node-ir-145" xlink:title="unverified: IR %145" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M778.5,-462.43C778.5,-462.43 587.5,-462.43 587.5,-462.43 581.5,-462.43 575.5,-456.43 575.5,-450.43 575.5,-450.43 575.5,-420.43 575.5,-420.43 575.5,-414.43 581.5,-408.43 587.5,-408.43 587.5,-408.43 778.5,-408.43 778.5,-408.43 784.5,-408.43 790.5,-414.43 790.5,-420.43 790.5,-420.43 790.5,-450.43 790.5,-450.43 790.5,-456.43 784.5,-462.43 778.5,-462.43"/>
+<text text-anchor="middle" x="683" y="-444.63" font-family="DejaVu Sans" font-size="11.00">IR %145 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="683" y="-432.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="683" y="-420.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g15 -->
+<g id="node19" class="node">
+<title>g15</title>
+<g id="a_node19"><a xlink:href="#node-ir-159" xlink:title="unverified: IR %159" target="_self">
+<path fill="#edf0f3" stroke="#8793a0" stroke-width="1.3" d="M627.5,-357.43C627.5,-357.43 436.5,-357.43 436.5,-357.43 430.5,-357.43 424.5,-351.43 424.5,-345.43 424.5,-345.43 424.5,-315.43 424.5,-315.43 424.5,-309.43 430.5,-303.43 436.5,-303.43 436.5,-303.43 627.5,-303.43 627.5,-303.43 633.5,-303.43 639.5,-309.43 639.5,-315.43 639.5,-315.43 639.5,-345.43 639.5,-345.43 639.5,-351.43 633.5,-357.43 627.5,-357.43"/>
+<text text-anchor="middle" x="532" y="-339.63" font-family="DejaVu Sans" font-size="11.00">IR %159 &#160;| &#160;line ?</text>
+<text text-anchor="middle" x="532" y="-327.63" font-family="DejaVu Sans" font-size="11.00">Source location unavailable</text>
+<text text-anchor="middle" x="532" y="-315.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 0 missed / 1 unknown</text>
+</a>
+</g>
+</g>
+<!-- g16 -->
+<g id="node20" class="node">
+<title>g16</title>
+<g id="a_node20"><a xlink:href="#node-BB402" xlink:title="uncovered: BB402" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M435,-252.43C435,-252.43 315,-252.43 315,-252.43 309,-252.43 303,-246.43 303,-240.43 303,-240.43 303,-210.43 303,-210.43 303,-204.43 309,-198.43 315,-198.43 315,-198.43 435,-198.43 435,-198.43 441,-198.43 447,-204.43 447,-210.43 447,-210.43 447,-240.43 447,-240.43 447,-246.43 441,-252.43 435,-252.43"/>
+<text text-anchor="middle" x="375" y="-234.63" font-family="DejaVu Sans" font-size="11.00">BB402 &#160;| &#160;line 2273</text>
+<text text-anchor="middle" x="375" y="-222.63" font-family="DejaVu Sans" font-size="11.00">item&#45;&gt;prev = NULL;</text>
+<text text-anchor="middle" x="375" y="-210.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+<!-- g17 -->
+<g id="node21" class="node">
+<title>g17</title>
+<g id="a_node21"><a xlink:href="#node-BB403" xlink:title="uncovered: BB403" target="_self">
+<path fill="#fee9e7" stroke="#b2423d" stroke-width="1.3" d="M329,-147.43C329,-147.43 209,-147.43 209,-147.43 203,-147.43 197,-141.43 197,-135.43 197,-135.43 197,-105.43 197,-105.43 197,-99.43 203,-93.43 209,-93.43 209,-93.43 329,-93.43 329,-93.43 335,-93.43 341,-99.43 341,-105.43 341,-105.43 341,-135.43 341,-135.43 341,-141.43 335,-147.43 329,-147.43"/>
+<text text-anchor="middle" x="269" y="-129.63" font-family="DejaVu Sans" font-size="11.00">BB403 &#160;| &#160;line 2277</text>
+<text text-anchor="middle" x="269" y="-117.63" font-family="DejaVu Sans" font-size="11.00">}</text>
+<text text-anchor="middle" x="269" y="-105.63" font-family="DejaVu Sans" font-size="11.00">0 covered / 1 missed</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<p class="note">ENTRY is the start of the function. EXIT marks normal return; STOP / EXCEPTION marks exceptional or unreachable termination. True/false/case labels come from LLVM IR terminators. Dashed arrows are loop-back candidates. <strong>Every arrow is a possible transfer, not proof that the edge executed.</strong> A colored node has a validated runtime PC match; gray means no reliable match. Simplified mode folds linear chains but retains every branch alternative.</p>
+<h2>Blocks and LLVM details</h2><details class="node-detail" id="node-BB397">
+<summary>BB397 <span class="state uncovered">uncovered</span> · line 2244</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>{</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%entry</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x142bc</code>
+ · <strong>slot:</strong> 443</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %7, label %8, label %9, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2244">Open source line 2244</a></p></div></details><details class="node-detail" id="node-IR %14">
+<summary>IR %14 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%14</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x1432c</code>
+ · <strong>slot:</strong> 444</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %16, label %17, label %18, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %23">
+<summary>IR %23 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%23</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x1438c</code>
+ · <strong>slot:</strong> 445</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %25, label %26, label %27, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %30">
+<summary>IR %30 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%30</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x143e4</code>
+ · <strong>slot:</strong> 446</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %32, label %33, label %34, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %42">
+<summary>IR %42 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%42</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x14450</code>
+ · <strong>slot:</strong> 447</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %44, label %45, label %46, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %53">
+<summary>IR %53 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%53</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x144b4</code>
+ · <strong>slot:</strong> 448</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %55, label %56, label %57, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %60">
+<summary>IR %60 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%60</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x1450c</code>
+ · <strong>slot:</strong> 449</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %62, label %63, label %64, !dbg !2379, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-BB398">
+<summary>BB398 <span class="state uncovered">uncovered</span> · line 2250</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>if (item != parent-&gt;child)</code></p>
+<p><strong>Condition:</strong> <code>if (item != parent-&gt;child)</code></p>
+<p><strong>IR block:</strong> <code>%67</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x14568</code>
+ · <strong>slot:</strong> 450</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %69, label %70, label %71, !dbg !2394, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2250">Open source line 2250</a></p></div></details><details class="node-detail" id="node-IR %77">
+<summary>IR %77 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%77</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x145c0</code>
+ · <strong>slot:</strong> 451</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %79, label %80, label %81, !dbg !2400, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-BB399">
+<summary>BB399 <span class="state uncovered">uncovered</span> · line 2255</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>if (item-&gt;next != NULL)</code></p>
+<p><strong>Condition:</strong> <code>if (item-&gt;next != NULL)</code></p>
+<p><strong>IR block:</strong> <code>%91</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x1462c</code>
+ · <strong>slot:</strong> 452</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %93, label %94, label %95, !dbg !2409, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2255">Open source line 2255</a></p></div></details><details class="node-detail" id="node-IR %100">
+<summary>IR %100 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%100</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x1467c</code>
+ · <strong>slot:</strong> 453</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %102, label %103, label %104, !dbg !2414, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-BB400">
+<summary>BB400 <span class="state uncovered">uncovered</span> · line 2261</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>if (item == parent-&gt;child)</code></p>
+<p><strong>Condition:</strong> <code>if (item == parent-&gt;child)</code></p>
+<p><strong>IR block:</strong> <code>%114</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x146e8</code>
+ · <strong>slot:</strong> 454</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %116, label %117, label %118, !dbg !2423, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2261">Open source line 2261</a></p></div></details><details class="node-detail" id="node-IR %124">
+<summary>IR %124 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%124</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x14740</code>
+ · <strong>slot:</strong> 455</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %126, label %127, label %128, !dbg !2429, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-BB401">
+<summary>BB401 <span class="state uncovered">uncovered</span> · line 2266</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>else if (item-&gt;next == NULL)</code></p>
+<p><strong>Condition:</strong> <code>else if (item-&gt;next == NULL)</code></p>
+<p><strong>IR block:</strong> <code>%136</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x147a8</code>
+ · <strong>slot:</strong> 456</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %138, label %139, label %140, !dbg !2437, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2266">Open source line 2266</a></p></div></details><details class="node-detail" id="node-IR %145">
+<summary>IR %145 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%145</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x147f8</code>
+ · <strong>slot:</strong> 457</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %147, label %148, label %149, !dbg !2442, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-IR %159">
+<summary>IR %159 <span class="state unverified">unverified</span> · line ?</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>(no source line available)</code></p>
+<p><strong>Condition:</strong> <code>(not resolved)</code></p>
+<p><strong>IR block:</strong> <code>%159</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x14864</code>
+ · <strong>slot:</strong> 458</p>
+<p><strong>Mapping:</strong> unverified; status not inferred</p>
+<pre>br i1 %161, label %162, label %163, !prof !132</pre><p>No source line</p></div></details><details class="node-detail" id="node-BB402">
+<summary>BB402 <span class="state uncovered">uncovered</span> · line 2273</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>item-&gt;prev = NULL;</code></p>
+<p><strong>Condition:</strong> <code>item-&gt;prev = NULL;</code></p>
+<p><strong>IR block:</strong> <code>%164</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x148a8</code>
+ · <strong>slot:</strong> 459</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %166, label %167, label %168, !dbg !2451, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2273">Open source line 2273</a></p></div></details><details class="node-detail" id="node-BB403">
+<summary>BB403 <span class="state uncovered">uncovered</span> · line 2277</summary>
+<div class="detail-body"><p><strong>Source:</strong> <code>}</code></p>
+<p><strong>Condition:</strong> <code>}</code></p>
+<p><strong>IR block:</strong> <code>%174</code>
+ · <strong>PC:</strong> <code>/home/mafioznik/share/bb-genhtml-bonus1/build/cjson/program@0x14904</code>
+ · <strong>slot:</strong> 460</p>
+<p><strong>Mapping:</strong> verified by DWARF</p>
+<pre>br i1 %176, label %177, label %178, !dbg !2459, !prof !132</pre><p><a href="../third_party/cJSON/cJSON.c.gcov.html#bb-line-2277">Open source line 2277</a></p></div></details>
+</main><script>
+(function() {
+  var buttons = document.querySelectorAll('button[data-mode]');
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var mode = button.getAttribute('data-mode');
+      document.querySelectorAll('.graph[data-graph]').forEach(function(graph) {
+        graph.hidden = graph.getAttribute('data-graph') !== mode;
+      });
+      buttons.forEach(function(item) {item.setAttribute('aria-pressed', String(item === button));});
+    });
+  });
+  function focusDetail() {
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id || !id.startsWith('node-')) return;
+    var detail = document.getElementById(id);
+    if (detail) {detail.open = true; detail.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange', focusDetail);
+  focusDetail();
+})();
+</script></body></html>

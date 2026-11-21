@@ -1,0 +1,1 @@
+genhtml build/inih/coverage.info --branch-coverage --rc check_data_consistency=0 --output-directory build/inih/html-compatible
